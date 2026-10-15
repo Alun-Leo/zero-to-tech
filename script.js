@@ -1,3 +1,3 @@
 function changeText(){
-    document.getElementById('mes').textContent = '激活';
+    document.getElementById('mes').textContent = '安妮是我老婆';
 }
