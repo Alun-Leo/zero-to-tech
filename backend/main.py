@@ -76,7 +76,8 @@ def analyze(req: AnalyzeRequest, request: Request, response: Response):
 
 @app.get("/api/history")
 def history(request: Request, response: Response):
-    return get_history(request, response)
+    sid = get_session_id(request, response)   # ← 关键：先从 HTTP 对象里提取出 sid
+    return get_history(sid, 10)
 
 def get_session_id(request: Request, response: Response) -> str:
     sid = request.cookies.get("session_id")      # 先看有没有纸条
