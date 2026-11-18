@@ -6,4 +6,5 @@ __pycache__/
 *.py[cod]
 backend/*.db
 .env*
+!.env.example
 .next/
