@@ -32,5 +32,6 @@
 
     // Terminal
     "terminal.border": "#2A312E"
-  }
+  },
+  "python.terminal.useEnvFile": true
 }
