@@ -1,6 +1,4 @@
 # backend/main.py
-from urllib import response
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -77,8 +75,8 @@ def analyze(req: AnalyzeRequest, request: Request, response: Response):
     return result
 
 @app.get("/api/history")
-def history():
-    return get_history(10)
+def history(request: Request, response: Response):
+    return get_history(request, response)
 
 def get_session_id(request: Request, response: Response) -> str:
     sid = request.cookies.get("session_id")      # 先看有没有纸条
